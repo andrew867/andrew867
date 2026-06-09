@@ -47,7 +47,7 @@ If the governance layer isn't the deepest part of the stack, the stack is built 
 
 ## Background
 
-Before AI, fifteen years of systems that were not allowed to fail. Broadcast engineering at Newfoundland Broadcasting (NTV), keeping HD television transmission running for half a million households. Led a 15-person IT field support team across Atlantic Canada. Designed and built embedded Linux broadcast appliances, and implemented a national emergency alerting setup for community radio. Co-created a televised charity bingo operation that raised over $1M for Newfoundland charities, with software that generated and serialized hundreds of thousands of unique cards. Based in Oakville, Ontario.
+Before AI, fifteen years of systems that were not allowed to fail. Broadcast engineering at Newfoundland Broadcasting (NTV), keeping HD television transmission running for half a million households. Led a diverse IT field support team across Atlantic Canada. Designed and built embedded Linux broadcast appliances, and implemented a national emergency alerting setup for community radio. Co-created a televised charity bingo operation that has raised over $1M for Newfoundland charities, with software that generated and serialized hundreds of thousands of unique cards.
 
 The throughline: broadcast, emergency alerting, and live production are domains where the system has to work, has to be auditable, and has to fail gracefully in front of an audience. Governed AI is the same discipline pointed at a new problem.
 
