@@ -22,9 +22,9 @@ Those are three. The system covers more.
 
 ## Writing
 
-- **[Hydrogenuine Overview](./Hydrogenuine_Overview.pdf)** — two pages, no math. What the system is and why it exists.
-- **[Steer, Don't Silence v3](./SteerDontSilence_v3.pdf)** — a human-centered safety framework for agentic AI: proportional response instead of binary bans, accountable handoffs instead of silent disappearance. Version 3 is grounded in four months of operating Hydrogenuine, with a machine-side correction ladder that mirrors the human one. Lives in [AI_Oversight_Framework](https://github.com/andrew867/AI_Oversight_Framework) with a skeleton implementation.
-- **Governed Intelligence** (full paper) — citations, component mappings, and the verification mathematics. Available under NDA.
+- **[Hydrogenuine Overview](./Hydrogenuine_Overview.pdf)** - two pages, no math. What the system is and why it exists.
+- **[Steer, Don't Silence v3](./SteerDontSilence_v3.pdf)** - a human-centered safety framework for agentic AI: proportional response instead of binary bans, accountable handoffs instead of silent disappearance. Version 3 is grounded in four months of operating Hydrogenuine, with a machine-side correction ladder that mirrors the human one. Lives in [AI_Oversight_Framework](https://github.com/andrew867/AI_Oversight_Framework) with a skeleton implementation.
+- **Governed Intelligence** (full paper) - citations, component mappings, and the verification mathematics. Available under NDA.
 
 ## Architecture at a Glance
 
