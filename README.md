@@ -16,13 +16,15 @@ My recent work extends Hydrogenuine with quantum-inspired verification and cogni
 
 - **Quantum-inspired output verification.** The error correction mathematics built to protect fragile quantum states, adapted as structural analogs for detecting and correcting errors in multi-agent outputs. No quantum hardware required; the math transfers.
 - **Multi-framework cognitive fingerprinting.** AI entity identity mapped across many psychological and developmental frameworks, including the Big Five, Kegan stages, and the Enneagram, producing verifiable, tamper-evident behavioral signatures that persist across sessions and platforms.
-- **Latent cognitive state detection.** Surfacing reasoning that influences agent behavior but isn't expressed in outputs, using detection and amplification methods adapted from quantum materials research. Arguably the problem that keeps safety researchers up at night.
+- **Latent cognitive state detection.** Surfacing reasoning that influences agent behavior but isn't expressed in outputs, using detection and amplification methods adapted from quantum materials research.
 
 Those are three. The system covers more.
 
+As of June 2026 this is no longer just research: the quantum-inspired verification layer, the embodied robotics stack (simulation-first), a governed learning loop with anti-Goodhart guardrails, and TLA+ formally verified safety models are implemented, tested, and wired into the production runtime - flag-gated, shadow-first, and activated only through recorded experiment gates. Every tranche shipped with its own proof bundle.
+
 ## Writing
 
-- **[Hydrogenuine Overview](./Hydrogenuine_Overview.pdf)** - two pages, no math. What the system is and why it exists.
+- **[Hydrogenuine Overview](./Hydrogenuine_Overview.pdf)** - two pages, no math. What the system is and why it exists (updated June 2026).
 - **[Steer, Don't Silence v3](./SteerDontSilence_v3.pdf)** - a human-centered safety framework for agentic AI: proportional response instead of binary bans, accountable handoffs instead of silent disappearance. Version 3 is grounded in four months of operating Hydrogenuine, with a machine-side correction ladder that mirrors the human one. Lives in [AI_Oversight_Framework](https://github.com/andrew867/AI_Oversight_Framework) with a skeleton implementation.
 - **Governed Intelligence** (full paper) - citations, component mappings, and the verification mathematics. Available under NDA.
 
@@ -30,14 +32,16 @@ Those are three. The system covers more.
 
 | Layer | What | Status |
 |---|---|---|
-| L7: Physical/Embodied | ROS 2 bridge, NVIDIA Isaac Sim, sensor fusion, safety gates | Spec'd |
-| L6: Quantum-Inspired | State correlation, output verification, noise modeling, dark state detection | Spec'd |
-| L5: Cognitive/Persona | Fingerprinting, persona steering, emotional modeling, trait interpretation | Built |
-| L4: Governance/Safety | 86 modules: trust, policy, compliance, alignment, adversarial, constitutional memory | Built |
-| L3: Orchestration | DAG executor, swarm coordination, event bus, LLM abstraction | Built |
-| L2: Platform/API | Gateway, 6 platform targets, publishing API | Built |
-| L1: UI/Operator | Operator console, client UI, product console | Built |
-| L0: Infrastructure | Docker Compose, PostgreSQL, SQLite, observability | Built |
+| L7: Physical/Embodied | ROS 2 bridge, NVIDIA Isaac Sim, sensor fusion, 5-level safety gate (sub-100ms halt), comms-loss watchdog, fleet coordination | Built (simulation-first; mock-mode CI; hardware validation pending) |
+| L6: Quantum-Inspired | State correlation, LDPC-style output verification, noise modeling, dark state detection, temporal auth, swarm transport prediction | Built (flag-gated, shadow-first, experiment-gated activation) |
+| L5: Cognitive/Persona | Fingerprinting, persona steering, emotional modeling, trait interpretation, fingerprint evolution with lineage + operator approval | Built |
+| L4: Governance/Safety | 86 modules: trust, policy, compliance, alignment, adversarial, constitutional memory - plus TLA+ formally verified safety models with runtime trace conformance | Built |
+| L3: Orchestration | DAG executor, swarm coordination, event bus, LLM abstraction, governed learning loop with control groups | Built |
+| L2: Platform/API | Gateway, 6 platform targets, publishing API, audit + notification SSE | Built |
+| L1: UI/Operator | Operator console, client UI, product console on a shared design system (SSO, a11y/WCAG pass, light/dark, real-time SSE) | Built |
+| L0: Infrastructure | Docker Compose, PostgreSQL, SQLite, observability, CI proof gates | Built |
+
+Every layer above is implemented and tested. Robotics hardware validation and a small quality backlog (staging-scale benchmarks, some named test cases) remain environment-gated or scheduled - not hidden, not blocking the operational claim.
 
 ## Thesis
 
