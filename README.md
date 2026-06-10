@@ -20,7 +20,7 @@ My recent work extends Hydrogenuine with quantum-inspired verification and cogni
 
 Those are three. The system covers more.
 
-As of June 2026 this is no longer just research: the quantum-inspired verification layer, the embodied robotics stack (simulation-first), a governed learning loop with anti-Goodhart guardrails, and TLA+ formally verified safety models are implemented, tested, and wired into the production runtime - flag-gated, shadow-first, and activated only through recorded experiment gates. Every tranche shipped with its own proof bundle.
+As of June 2026 this is no longer just research: the quantum-inspired verification layer, the embodied robotics stack (simulation-first), fleet coordination across distributed mesh nodes, a governed learning loop with anti-Goodhart guardrails, and TLA+ formally verified safety models are implemented, tested, and wired into the production runtime - flag-gated, shadow-first, and activated only through recorded experiment gates. Every tranche shipped with its own proof bundle.
 
 ## Writing
 
@@ -33,10 +33,10 @@ As of June 2026 this is no longer just research: the quantum-inspired verificati
 | Layer | What | Status |
 |---|---|---|
 | L7: Physical/Embodied | ROS 2 bridge, NVIDIA Isaac Sim, sensor fusion, 5-level safety gate (sub-100ms halt), comms-loss watchdog, fleet coordination | Built (simulation-first; mock-mode CI; hardware validation pending) |
-| L6: Quantum-Inspired | State correlation, LDPC-style output verification, noise modeling, dark state detection, temporal auth, swarm transport prediction | Built (flag-gated, shadow-first, experiment-gated activation) |
+| L6: Quantum-Inspired | State correlation, LDPC-style output verification, noise modeling, dark state detection, spectrum monitor, temporal auth | Built (flag-gated, shadow-first, experiment-gated activation) |
 | L5: Cognitive/Persona | Fingerprinting, persona steering, emotional modeling, trait interpretation, fingerprint evolution with lineage + operator approval | Built |
 | L4: Governance/Safety | 86 modules: trust, policy, compliance, alignment, adversarial, constitutional memory - plus TLA+ formally verified safety models with runtime trace conformance | Built |
-| L3: Orchestration | DAG executor, swarm coordination, event bus, LLM abstraction, governed learning loop with control groups | Built |
+| L3: Orchestration | DAG executor, swarm coordination, event bus, LLM abstraction, governed learning loop with control groups, distributed mesh production | Built |
 | L2: Platform/API | Gateway, 6 platform targets, publishing API, audit + notification SSE | Built |
 | L1: UI/Operator | Operator console, client UI, product console on a shared design system (SSO, a11y/WCAG pass, light/dark, real-time SSE) | Built |
 | L0: Infrastructure | Docker Compose, PostgreSQL, SQLite, observability, CI proof gates | Built |
@@ -61,4 +61,4 @@ When I'm not doing this, I build weird solutions for unique problems, for exampl
 
 ## Contact
 
-me@andrewgreen.ca
+[me@andrewgreen.ca](mailto:me@andrewgreen.ca)
