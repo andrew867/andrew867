@@ -6,7 +6,7 @@ Fifteen years running broadcast systems that were not allowed to fail. Now build
 
 ## Background
 
-Self-taught. Before AI: broadcast engineering at Newfoundland Broadcasting (NTV), keeping HD television transmission running for half a million households. Led a diverse IT field support team across Atlantic Canada. Designed and built embedded Linux broadcast appliances, and implemented a national emergency alerting setup for community radio. Co-created a televised charity bingo operation that has raised over $1M for Newfoundland charities, with software that generated and serialized hundreds of thousands of unique cards.
+Before AI: broadcast engineering at Newfoundland Broadcasting (NTV), keeping HD television transmission running for half a million households. Led a diverse IT field support team across Atlantic Canada. Designed and built embedded Linux broadcast appliances, and implemented a national emergency alerting setup for community radio. Co-created a televised charity bingo operation that has raised over $1M for Newfoundland charities, with software that generated and serialized hundreds of thousands of unique cards.
 
 The throughline: broadcast, emergency alerting, and live production are domains where the system has to work, has to be auditable, and has to fail gracefully in front of an audience. Governed AI is the same discipline pointed at a new problem.
 
