@@ -1,47 +1,58 @@
 # Andrew Green
 
-![Focus](https://img.shields.io/badge/Focus-AI%20Governance-1f3a5f) ![Status](https://img.shields.io/badge/System-Operational-2ea44f) ![Governance](https://img.shields.io/badge/Governance%3AOrchestration-2.5%3A1-blueviolet) ![Team](https://img.shields.io/badge/Team%20Size-1-orange) ![Made in Canada](https://img.shields.io/badge/Made%20in-Canada-d52b1e) ![Thesis](https://img.shields.io/badge/Trust%20Problems-Have%20Engineering%20Solutions-555)
+![Focus](https://img.shields.io/badge/Focus-AI%20Governance-1f3a5f) ![Status](https://img.shields.io/badge/System-Operational-2ea44f) ![Claims](https://img.shields.io/badge/Claim%20Boundaries-Published%20GREEN%2FYELLOW-blueviolet) ![Team](https://img.shields.io/badge/Team%20Size-1-orange) ![Made in Canada](https://img.shields.io/badge/Made%20in-Canada-d52b1e) ![Thesis](https://img.shields.io/badge/Trust%20Problems-Have%20Engineering%20Solutions-555)
 
-Self-taught AI systems engineer. Solo founder and architect of **Hydrogenuine**, a governed AI work system where the accountability layer is deeper than the orchestration it governs.
+Self-taught AI systems engineer. Fifteen years running broadcast systems that were not allowed to fail, now building **[Hydrogenuine](https://hydrogenuine.ca)**, a governed runtime for AI agents and workflows.
+
+## Background
+
+Before AI: broadcast engineering at Newfoundland Broadcasting (NTV), keeping HD television transmission running for half a million households. Led a diverse IT field support team across Atlantic Canada. Designed and built embedded Linux broadcast appliances, and implemented a national emergency alerting setup for community radio. Co-created a televised charity bingo operation that has raised over $1M for Newfoundland charities, with software that generated and serialized hundreds of thousands of unique cards.
+
+The throughline: broadcast, emergency alerting, and live production are domains where the system has to work, has to be auditable, and has to fail gracefully in front of an audience. Governed AI is the same discipline pointed at a new problem.
 
 ## What I Build
 
-**Hydrogenuine** is a full-stack governed AI platform: 120+ modules, 8 architectural layers, 14 core packages, 6 platform targets, 3 operator interfaces. Every agent action produces a verifiable proof bundle. Every output traces back to its reasoning chain, inputs, and the governance decisions that permitted it.
+**Hydrogenuine** gives agent work a place to run, a boundary to stop at, and a record you can read later. Models propose actions, draft text, call tools, and route work; Hydrogenuine decides what is allowed, records what it refused, and keeps memory changes under review.
 
-The governance layer alone is 86 modules, covering everything from trust evaluation and policy enforcement to adversarial testing and constitutional memory. That's 2.5x larger than the entire orchestration runtime. The ratio is the point.
+The core loop:
 
-## Research
+`Model / agent proposal` → `output + source gate` → `memory quarantine (candidate, not truth)` → `authority chain` → `receipt or refusal, recorded either way` → `operator review`
 
-My recent work extends Hydrogenuine with quantum-inspired verification and cognitive fingerprinting, grounded in 16 peer-reviewed physics papers. Three examples:
+The authority chain is five separate stages, so no stage authorizes itself:
 
-- **Quantum-inspired output verification.** The error correction mathematics built to protect fragile quantum states, adapted as structural analogs for detecting and correcting errors in multi-agent outputs. No quantum hardware required; the math transfers.
-- **Multi-framework cognitive fingerprinting.** AI entity identity mapped across many psychological and developmental frameworks, including the Big Five, Kegan stages, and the Enneagram, producing verifiable, tamper-evident behavioral signatures that persist across sessions and platforms.
-- **Latent cognitive state detection.** Surfacing reasoning that influences agent behavior but isn't expressed in outputs, using detection and amplification methods adapted from quantum materials research.
+| Stage | Role |
+| --- | --- |
+| **SOAR** | Safety-domain arbitration, first gate, hard veto |
+| **HAL** | Higher arbitration and routing; fails closed when a route isn't clearly allowed |
+| **GPP** | Mints time-limited, evidence-backed permits — never executes them |
+| **UEAK** | Final admission gate; default-deny |
+| **OEA** | The effect boundary; bounded, sandbox/stub in current public demos |
 
-Those are three. The system covers more.
+A refusal is a first-class, named result (`DENIED_SELF_MINT`, `DENIED_EXPIRED`, `DENIED_SCOPE_MISMATCH`, `DENIED_MISSING_PROOF`, `DENIED_REPLAY`), not a swallowed error.
 
-As of June 2026 this is no longer just research: the quantum-inspired verification layer, the embodied robotics stack (simulation-first), fleet coordination across distributed mesh nodes, a governed learning loop with anti-Goodhart guardrails, and TLA+ formally verified safety models are implemented, tested, and wired into the production runtime - flag-gated, shadow-first, and activated only through recorded experiment gates. Every tranche shipped with its own proof bundle.
+## Status
+
+Hydrogenuine publishes claim boundaries instead of a generic "production ready" badge — no layer is claimed as more finished than it is. As of the current site:
+
+**GREEN — implemented and tested**
+Native DAG/task-graph execution · memory quarantine · contradiction ledger · proof-bundle/tamper-detection tooling · permit/refusal logic through the authority pipeline · local/OpenAI-compatible model routing · command/tool denial patterns
+
+**YELLOW — sandboxed, stubbed, or hardening**
+UEAK/OEA terminal execution adapters · authenticated operator identity and review UI · external anchoring/receipt chain enforcement · TLA+ TLC CI enforcement · ROS2/Isaac physical backends
+
+**Roadmap**
+Temporal/GitHub Actions/Airflow wrappers · proof walkthrough page · DAG kill/resume demo · operator console walkthrough · external-anchor completion
+
+Full detail: [Current status on hydrogenuine.ca](https://hydrogenuine.ca/#status) · [Claim boundaries](https://hydrogenuine.ca/proof/)
+
+## Open Core
+
+The trust grammar — receipt schemas, refusal vocabulary, proof bundle patterns, claim boundary docs — is kept open and inspectable. The commercial layer is the supported enterprise runtime around it: operator console, deployment support, policy packaging, compliance export. No license, price, or availability date is promised ahead of being decided. Details: [Open Core](https://hydrogenuine.ca/open-core/)
 
 ## Writing
 
-- **[Hydrogenuine Overview](./Hydrogenuine_Overview.pdf)** - two pages, no math. What the system is and why it exists (updated June 2026).
-- **[Steer, Don't Silence v3](./SteerDontSilence_v3.pdf)** - a human-centered safety framework for agentic AI: proportional response instead of binary bans, accountable handoffs instead of silent disappearance. Version 3 is grounded in four months of operating Hydrogenuine, with a machine-side correction ladder that mirrors the human one. Lives in [AI_Oversight_Framework](https://github.com/andrew867/AI_Oversight_Framework) with a skeleton implementation.
-- **Governed Intelligence** (full paper) - citations, component mappings, and the verification mathematics. Available under NDA.
-
-## Architecture at a Glance
-
-| Layer | What | Status |
-|---|---|---|
-| L7: Physical/Embodied | ROS 2 bridge, NVIDIA Isaac Sim, sensor fusion, 5-level safety gate (sub-100ms halt), comms-loss watchdog, fleet coordination | Built (simulation-first; mock-mode CI; hardware validation pending) |
-| L6: Quantum-Inspired | State correlation, LDPC-style output verification, noise modeling, dark state detection, spectrum monitor, temporal auth | Built (flag-gated, shadow-first, experiment-gated activation) |
-| L5: Cognitive/Persona | Fingerprinting, persona steering, emotional modeling, trait interpretation, fingerprint evolution with lineage + operator approval | Built |
-| L4: Governance/Safety | 86 modules: trust, policy, compliance, alignment, adversarial, constitutional memory - plus TLA+ formally verified safety models with runtime trace conformance | Built |
-| L3: Orchestration | DAG executor, swarm coordination, event bus, LLM abstraction, governed learning loop with control groups, distributed mesh production | Built |
-| L2: Platform/API | Gateway, 6 platform targets, publishing API, audit + notification SSE | Built |
-| L1: UI/Operator | Operator console, client UI, product console on a shared design system (SSO, a11y/WCAG pass, light/dark, real-time SSE) | Built |
-| L0: Infrastructure | Docker Compose, PostgreSQL, SQLite, observability, CI proof gates | Built |
-
-Every layer above is implemented and tested. Robotics hardware validation and a small quality backlog (staging-scale benchmarks, some named test cases) remain environment-gated or scheduled - not hidden, not blocking the operational claim.
+- **[Hydrogenuine Overview](./Hydrogenuine_Overview.pdf)** — two pages, no math. What the system is and why it exists.
+- **[Steer, Don't Silence v3](./SteerDontSilence_v3.pdf)** — a human-centered safety framework for agentic AI: proportional response instead of binary bans, accountable handoffs instead of silent disappearance. Grounded in months of operating Hydrogenuine, with a machine-side correction ladder that mirrors the human one. Lives in [AI_Oversight_Framework](https://github.com/andrew867/AI_Oversight_Framework) with a skeleton implementation.
 
 ## Thesis
 
@@ -49,16 +60,10 @@ The hardest problems in AI are not capability problems. They are trust problems.
 
 If the governance layer isn't the deepest part of the stack, the stack is built upside down.
 
-## Background
-
-Before AI, fifteen years of systems that were not allowed to fail. Broadcast engineering at Newfoundland Broadcasting (NTV), keeping HD television transmission running for half a million households. Led a diverse IT field support team across Atlantic Canada. Designed and built embedded Linux broadcast appliances, and implemented a national emergency alerting setup for community radio. Co-created a televised charity bingo operation that has raised over $1M for Newfoundland charities, with software that generated and serialized hundreds of thousands of unique cards.
-
-The throughline: broadcast, emergency alerting, and live production are domains where the system has to work, has to be auditable, and has to fail gracefully in front of an audience. Governed AI is the same discipline pointed at a new problem.
-
 ## Elsewhere
 
-When I'm not doing this, I build weird solutions for unique problems, for example fleet management for 1990s payphones, run their Z180 firmware on a cycle-accurate emulator, and control broadcast CRT monitors over IP. I like systems that have to account for themselves.
+When I'm not doing this, I build weird solutions for unique problems — for example, fleet management for 1990s payphones, running their Z180 firmware on a cycle-accurate emulator, and controlling broadcast CRT monitors over IP. I like systems that have to account for themselves.
 
 ## Contact
 
-[me@andrewgreen.ca](mailto:me@andrewgreen.ca)
+[me@andrewgreen.ca](mailto:me@andrewgreen.ca) · [hydrogenuine.ca](https://hydrogenuine.ca)
